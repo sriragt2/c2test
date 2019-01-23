@@ -11,10 +11,17 @@ namespace c2test
             try
             {
                 string input = Console.ReadLine();
-                int score_input = int.Parse(input);
+                double score_input = double.Parse(input);
+                if(score_input>100)
+                {
+                    Console.WriteLine("Enter actual score");
+                }
+                else
+                {
+                    string grade = Grade_Score(score_input);
+                    Console.WriteLine("You scored " + grade);
+                }
 
-                string grade = Grade_Score(score_input);
-                Console.WriteLine("You scored " + grade);
                 Console.ReadKey(true);
             }
             catch
@@ -24,7 +31,7 @@ namespace c2test
             }
         }
 
-        private static string Grade_Score(int get_score_input)
+        private static string Grade_Score(double get_score_input)
         {
             if (get_score_input>=95)
             {
